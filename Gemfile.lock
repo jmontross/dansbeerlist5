@@ -31,13 +31,14 @@ GEM
     ancestry (1.2.4)
       activerecord (>= 2.2.2)
     arel (3.0.0)
-    aws-s3 (0.6.2)
-      builder
-      mime-types
-      xml-simple
+    aws-sdk (1.5.2)
+      httparty (~> 0.7)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
-    cocaine (0.2.0)
+    cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -54,6 +55,9 @@ GEM
     execjs (1.3.0)
       multi_json (~> 1.0)
     hike (1.2.1)
+    httparty (0.8.3)
+      multi_json (~> 1.0)
+      multi_xml
     i18n (0.6.0)
     journey (1.0.1)
     jquery-rails (2.0.0)
@@ -66,11 +70,14 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.4)
+    multi_xml (0.5.1)
     nifty-generators (0.4.6)
+    nokogiri (1.5.2)
     orm_adapter (0.0.6)
-    paperclip (2.4.1)
-      activerecord (>= 2.3.0)
-      activesupport (>= 2.3.2)
+    paperclip (3.0.3)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
     polyglot (0.3.3)
@@ -122,26 +129,26 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    uuidtools (2.1.2)
     warden (1.1.0)
       rack (>= 1.0)
     will_paginate (3.0.1)
-    xml-simple (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   ancestry
-  aws-s3
+  aws-sdk (~> 1.5.2)
   coffee-rails (= 3.2.2)
   devise
   jquery-rails (= 2.0.0)
   nifty-generators
-  paperclip (~> 2.3)
+  paperclip (~> 3.0)
   rails (= 3.2.1)
   rinku (~> 1.5.1)
   sass-rails (= 3.2.4)
   simple_form
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
-  will_paginate (~> 3.0.pre4)
+  will_paginate

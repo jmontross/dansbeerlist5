@@ -12,10 +12,10 @@ end
 gem "rinku", "~> 1.5.1"
 
 gem 'devise'
-gem 'will_paginate', '~> 3.0.pre4'
-gem 'aws-s3'
+gem 'will_paginate'
+gem 'aws-sdk', '~>1.5.2'
 gem 'simple_form'
-gem 'paperclip', '~> 2.3'
+gem 'paperclip', '~> 3.0'
 gem 'nifty-generators'
 gem 'ancestry'
 # Gems used only for assets and not required
