@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  newbeer: MyString
+  grade: MyString
+  content: MyText
+  user_id: 1
+
+two:
+  newbeer: MyString
+  grade: MyString
+  content: MyText
+  user_id: 1

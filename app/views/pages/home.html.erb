@@ -1,0 +1,23 @@
+<center>
+	<h1><u>*Home</u></h1>
+	</center>
+<% if signed_in? %>
+  
+   
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+       <h2>Your Daily Feeds:</h2>
+        <%= render 'shared/feed' %>
+      </td>
+    </tr>
+  </table>
+<% else %>
+  
+
+  <p>
+    Become part of our online beer tasting community!
+  </p>
+
+  <%= link_to "Sign up now!", new_user_registration_path, :class => "signup_button round" %>
+<% end %>

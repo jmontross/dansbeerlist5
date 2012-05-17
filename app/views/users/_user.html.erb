@@ -1,0 +1,14 @@
+<li>
+ 	<% if user.gravatar_file_name %>
+     <%= link_to image_tag(user.gravatar, :width => '150'), user %>
+     <% else %>
+        	<%= link_to default %>
+				<% end %>
+    
+     <%= link_to user.username, user %>
+
+     <% if current_user.admin? %>
+	  | <%= link_to "delete", destroy_user_path(user.id), :method => :delete, :confirm => "You sure?",
+	                                :title => "Delete #{user.username}" %>
+	  <% end %>
+</li>

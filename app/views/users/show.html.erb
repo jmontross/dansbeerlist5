@@ -1,0 +1,49 @@
+<center>
+	<h1><%= @user.username %></h1>
+</center>
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <info>
+				<% if @user.gravatar_file_name %>	
+					<%= image_tag(@user.gravatar.url, :width => '150')%>
+				<% else %>
+        	<%= link_to default, edit_registration_path(@user) %>
+				<% end %>
+		
+        <ul>
+    	<li><strong><u>Hometown:</u></strong><br /> <%= @user.hometown %></li>
+    	<li><strong><u>Beer of Choice:</u></strong><br /> <%= @user.beer %></li>
+    	<li><strong><u>Skill:</u></strong> <br /><%= @user.skill %></li>
+        </ul>
+    
+	<%= render 'follow_form' if signed_in? %>
+	<% if current_user?(@user) %>
+				<%= link_to "Edit Drinker Profile", edit_user_registration_path(@user) %>
+			
+	<% end %>
+     </info>
+     <info2>
+	<br/>
+	<%= render 'shared/stats_beerbadge_formula'%>
+    <%= render 'shared/stats_beerbadge'%>
+</td>
+</tr>
+</table>
+    <% unless @user.microposts.empty? %>
+        <table class="microposts" summary="User microposts">
+	
+   
+          <%= render @microposts %>
+        <%else%>
+       <h3>You're sober!!</h3>
+       <h4>Earn beer badges by posting new beers you've tried and by following other users!</h4>
+      <% end %>
+    </info2>
+    </td>
+    
+  </tr>
+</table>
+
+
+

@@ -1,0 +1,31 @@
+<div class="user_info">
+  
+
+  
+    
+
+   
+      <h5><b><%= render 'shared/stats_beerbadge_formula2'%></b></h5>
+   
+
+<table>
+	<tr>
+		<td><% if current_user.gravatar_file_name %>	
+					<%= image_tag(current_user.gravatar.url, :height => '70', :width =>'70')%>
+				<% else %>
+        	<%= link_to default2 %>
+				<% end %>
+		</td>
+		<td>
+		<ul>
+		<li><a href="<%= user_path(current_user) %>">Profile</a></li>
+		<li>
+           Beer Badges:	<%= current_user.microposts.count + current_user.following.count +  current_user.followers.count %> 
+        	</li>
+          
+        </ul>
+        </td>
+        </tr>
+        </table>
+  
+</div>
