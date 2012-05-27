@@ -1,6 +1,6 @@
 Dansbeerlist::Application.configure do
   
-  config.action_mailer.default_url_options = { :host => 'http://dansbeerlist2.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'dansbeerlist2.herokuapp.com' }
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
