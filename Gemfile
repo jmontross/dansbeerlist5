@@ -13,6 +13,7 @@ group :development do
 gem "rinku", "~> 1.5.1"
 
 gem 'devise'
+
 gem 'will_paginate'
 gem 'aws-sdk', '~>1.5.2'
 gem 'simple_form'

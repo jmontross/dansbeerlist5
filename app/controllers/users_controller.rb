@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  before_filter :authenticate_user!
   before_filter :admin_user,   :only => :destroy
   def index
     @title = "Drinkers"
