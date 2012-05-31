@@ -1,5 +1,6 @@
 Dansbeerlist::Application.routes.draw do
   
+
   devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy'
   end
   resources :users do
@@ -11,6 +12,8 @@ Dansbeerlist::Application.routes.draw do
   
   resources :microposts, :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
+  resources :videos
+  
   match 'gravatar' => 'blahs#gravatar' 
   match '/beerbasics'=> 'pages#beerbasics'
   match '/brewtube' => 'pages#brewtube'

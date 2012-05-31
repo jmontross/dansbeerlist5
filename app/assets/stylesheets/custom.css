@@ -177,6 +177,7 @@ info img {
  padding: 0 20px 10px 0;
 }
 
+
 info2 h1 {
 padding: 0 20px 10px 0;
 }
@@ -311,9 +312,28 @@ table.microposts {
 }
 
 table.microposts tr {
- 
+ background-color: #fff;
   height: 70px;
+  margin: 8px 0;
+  padding: 30px 30px 40px 5px;
+  border: solid 1px #999;
+  width: 300px;
+  border-radius: 50px;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, #FFF),
+      color-stop(1, #FFFBEF)
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      #FFF 0%,
+      #FFFBEF 100%
+  );
+
 }
+
 
 table.microposts tr td.gravatar {
   border-top: 1px solid #ccc;
@@ -323,9 +343,10 @@ table.microposts tr td.gravatar {
 }
 
 table.microposts tr td.micropost {
-  border-top: 10px solid #ccc;
+  border-top: 1px solid #ccc;
   vertical-align: top;
   padding-top: 10px;
+  font-size: 14px;
   
   
 }
