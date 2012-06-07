@@ -1,0 +1,20 @@
+<info2>
+      
+				<% if @article.articlepic_file_name %>	
+					<%= image_tag(@article.articlepic.url, :width => '300')%>
+					
+				<% else%>
+							<% end %>
+
+<% if current_user.admin? %>
+</br>
+<%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to "delete", destroy_article_path(@article.id), :method => :delete, :confirm => "You sure?",
+			:title => "Delete #{@article.title}" %>
+<% end %>
+        <ul>
+    	
+    	<li><strong><u>Story:</u></strong> <%= @article.content %></li>
+    	</ul>
+      </info2>
+</br>
+<%= link_to "Back to news stories.", articles_path %>

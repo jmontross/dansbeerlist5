@@ -4,9 +4,10 @@ class PagesController < ApplicationController
       if signed_in?
         @micropost = Micropost.new
         @feed_items = current_user.feed
-        logger.info "..........................................my name is Dan"
       end
-      
+      @mostrecentevents = Event.order("created_at desc").limit(1)
+      @mostrecentarticles = Article.order("created_at desc").limit(1)
+      @mostrecentvideos = Video.order("created_at desc").limit(1)
     end
 
   def beerbasics

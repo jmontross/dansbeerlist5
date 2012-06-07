@@ -1,0 +1,61 @@
+<h1><%= @post.name %></h1>
+<p id="notice"><%= notice %></p>
+
+<table class="microposts" summary="User microposts">
+	<tr class="short">
+
+  <td class="gravatar">
+	<% if @post.user.gravatar_file_name %>	
+						<%= link_to image_tag(@post.user.gravatar.url, :width => '100'), @post.user%>
+					<% else %>
+	        	<%= link_to default, @post.user %>
+					<% end %>
+	  </td>
+	<td class="micropost">
+	 <info2>
+		<ul>
+         <li><b> <%= @post.name %></b></li>
+         <li><%= @post.content %></li>
+		 <li><%= link_to "Back to Das Forum", posts_path %></li>
+       </ul>
+     </info2>
+
+</td>
+
+</tr>
+</table>
+
+<table class="microposts" summary="User microposts">	
+	<tr>
+	  	 
+<% unless @post.comments.empty? %>
+  <%= pluralize(@post.comments.size, 'comment') %>
+ <% end %>
+ 
+	<% for comment in @post.comments %>
+
+  
+	  <td class="gravatar">
+      <% if comment.user.gravatar_file_name %>	
+	  <%= image_tag(comment.user.gravatar.url, :width => '50')%>
+		<% else %>
+	   <%= default2 %>
+		<% end %>
+		</td>
+		<td class="micropost">
+		 <info2>
+			<ul>
+				<li><%= simple_format comment.content %></li>
+				<li><em><b><%= comment.user.username %></b> on <%= comment.created_at.strftime('%b %d, %Y') %></em></li>  
+                
+		    </ul>
+		</info2>
+		
+</td>
+</tr>
+<% end %>
+
+</table>
+<info2>
+<%= render "comments/form" %>
+</info2>

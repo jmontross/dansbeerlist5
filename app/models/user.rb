@@ -7,10 +7,17 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :hometown, :beer, :skill, :password, :password_confirmation, :remember_me
   
+  has_many :posts, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
+  
   has_many :microposts, :dependent => :destroy
   has_many :relationships, :foreign_key => "follower_id",
                            :dependent => :destroy
   has_many :following, :through => :relationships, :source => :followed
+  
+  has_many :participations
+  has_many :events, :through => :participations
+  
   has_many :reverse_relationships, :foreign_key => "followed_id",
                                    :class_name => "Relationship",
                                    :dependent => :destroy

@@ -8,11 +8,13 @@
     <td><h3><%= video.name %></h3><%= video.content.html_safe %></td>
   </tr>
   <tr>
-    <td><%= link_to 'Show', video %><%= link_to 'Edit', edit_video_path(video) %><%= link_to 'Destroy', video, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', video %>
+	
+</td>
   </tr>
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Video', new_video_path %>
+
+

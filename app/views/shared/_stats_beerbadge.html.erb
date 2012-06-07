@@ -1,18 +1,10 @@
 <ul>
-			<li>
-           <a href="<%= user_path(current_user) %>"> <%= pluralize(@user.microposts.count, "Beer Post") %> </a>
-            </li>
-        <li>
-        <% @user ||= current_user %>
-        <a href="<%= following_user_path(@user) %>">
-            <%= @user.following.count %> following
-        </a>
-        </li>
-        <li>
-        <a href="<%= followers_user_path(@user) %>">
-            <%= pluralize(@user.followers.count, "follower") %></a>
-        </li>
-        <li>
-        	<%= @user.microposts.count + @user.following.count +  @user.followers.count %> Total Beer Badges
-        	</li>
-        </ul>
+  <li><stats><a href="<%= user_path(@user) %>"><%= pluralize(@user.microposts.count, "Beer Post") %></a></stats></li>
+  <li><stats><a href="<%= user_path(@user) %>"><%= pluralize(@user.posts.count, "Das Forum Post") %></a></stats></li>
+  <li><stats><a href="<%= user_path(@user) %>"><%= pluralize(@user.comments.count, "Das Forum Comments") %></a></stats></li>
+  <li><stats><a href="<%= user_path(@user) %>"><%= pluralize(@user.participations.count, "Event attended") %></a></stats></li>
+  <li><stats><a href="<%= following_user_path(@user) %>"><%= pluralize(@user.following.count, "following") %></a></stats></li>
+  <li><stats><a href="<%= followers_user_path(@user) %>"><%= pluralize(@user.followers.count, "follower") %></a></stats></li>
+   <li><%= image_tag("add.png")%></li>
+  <li><%= @user.microposts.count + @user.following.count +  @user.followers.count +  @user.posts.count +  @user.comments.count +  @user.participations.count %> Total Beer Badges</li>
+</ul>

@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+  before_filter :authenticate_user!, :only => :show
+  before_filter :admin_user,   :only => [:new, :edit, :destroy]
   # GET /videos
   # GET /videos.json
   def index
@@ -79,5 +81,9 @@ class VideosController < ApplicationController
       format.html { redirect_to videos_url }
       format.json { head :no_content }
     end
+  end
+  
+  def admin_user
+    redirect_to(root_path) unless current_user.admin?
   end
 end

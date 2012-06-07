@@ -1,23 +1,58 @@
 <center>
-	<h1><u>*Home</u></h1>
+	<h1>Home</h1>
 	</center>
 <% if signed_in? %>
-  
+ <hr>
+<newshome>
+  	<h3>News:</h3>
+  		<% @mostrecentarticles.each do |m|%>
+  		<%=image_tag(m.articlepic, :width => '200')%>
+  		<ul>
+  		<li><h4><u><%=truncate(m.title, :length =>100)%></u></h4></li>
+  		<li><%=truncate(m.content, :length =>200)%></li>
+  		<li><%= link_to "Read more", article_path(m)%></li>
+  		</ul>
+  	<%end%>
+  </newshome>
+<hr>
+  <h3>Upcoming Events:</h3>
+  <eventshome>
+  		<% @mostrecentevents.each do |m|%>
+  		<%=image_tag(m.eventpic, :width => '200')%>
+  		<ul>
+  		<li><h4><u><%=truncate(m.name, :length =>100)%></u></h4></li>
+  		<li><%=truncate(m.description, :length =>200)%></li>
+  		<li><%= link_to "Read more", event_path(m)%></li>
+  		</ul>
+  	<%end%>
+  </eventshome> 
+<hr>
+  	<h3>This Weeks Brewtube Clip:</h3>
+  		<% @mostrecentvideos.each do |m|%>
+  		<h4><u><%=truncate(m.name, :length =>100)%></u></h4>
+  		<p><%= m.content.html_safe %></p>
+		<%end%>
+  		<p><%= link_to "See More", videos_path%></p>
+  	
+  <hr>
    
   <table class="front" summary="For signed-in users">
     <tr>
       <td class="main">
-       <h2>Your Daily Feeds:</h2>
+       <h3><u>Your Beer List</u>:</h3>
         <%= render 'shared/feed' %>
       </td>
     </tr>
   </table>
+<hr>
 <% else %>
   
 
   <p>
-    Become part of our online beer tasting community!
+    Become part of our online beer tasting community! Sign up today, it's free and fun as hell!! 
   </p>
-
+<p>
+	(<%= link_to "Read about us", about_path %> first.)
+</p>
   <%= link_to "Sign up now!", new_user_registration_path, :class => "signup_button round" %>
 <% end %>

@@ -11,7 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120531041543) do
+ActiveRecord::Schema.define(:version => 20120604180337) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "articlepic_file_name"
+    t.integer  "articlepic_file_size"
+    t.datetime "articlepic_updated_at"
+    t.string   "articlepic_content_type"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.text     "description"
+    t.date     "date"
+    t.string   "eventpic_file_name"
+    t.integer  "eventpic_file_size"
+    t.datetime "eventpic_updated_at"
+    t.string   "eventpic_content_type"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
 
   create_table "microposts", :force => true do |t|
     t.string   "newbeer"
@@ -23,6 +55,21 @@ ActiveRecord::Schema.define(:version => 20120531041543) do
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
+
+  create_table "participations", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"

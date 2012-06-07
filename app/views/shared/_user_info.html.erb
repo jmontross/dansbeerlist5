@@ -20,7 +20,7 @@
 		<ul>
 		<li><a href="<%= user_path(current_user) %>">Profile</a></li>
 		<li>
-           Beer Badges:	<%= current_user.microposts.count + current_user.following.count +  current_user.followers.count %> 
+           Beer Badges:	<%= current_user.microposts.count + current_user.following.count +  current_user.followers.count +  current_user.posts.count + current_user.comments.count + current_user.participations.count %> 
         	</li>
           
         </ul>

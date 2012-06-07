@@ -15,6 +15,9 @@
     	<li><strong><u>Hometown:</u></strong><br /> <%= @user.hometown %></li>
     	<li><strong><u>Beer of Choice:</u></strong><br /> <%= @user.beer %></li>
     	<li><strong><u>Skill:</u></strong> <br /><%= @user.skill %></li>
+		<% if current_user.admin? %>
+		<li><strong><u>Email:</u></strong> <br/><%= @user.email %></li>
+		  <% end %>
         </ul>
     
 	<%= render 'follow_form' if signed_in? %>

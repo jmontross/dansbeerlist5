@@ -1,0 +1,45 @@
+<h1>Das Forum</h1>
+
+<%= link_to 'New Post', new_post_path %>
+<table class="microposts" summary="User microposts"><tr>
+	<% @posts.each do |post| %>
+	<td class="gravatar">
+	   <% if post.user.gravatar_file_name %>	
+						<%= link_to image_tag(post.user.gravatar.url, :width => '50'), post.user%>
+					<% else %>
+	        	<%= link_to default2, post.user %>
+					<% end %>
+					
+	<center><namey><%= link_to post.user.username, post.user %></namey></center>
+					 
+	  </td>
+	<td class="micropost">
+	    
+	 <info2>
+		<ul>
+  
+    <li>(<%= pluralize(post.comments.size, 'comment') %>)</li>   
+    <li><%= post.name %></li>
+    <li><%= post.content %></li>
+	<li><span class="timestamp">
+      Posted <%= time_ago_in_words(post.created_at) %> ago.</li>
+    <li><%= link_to 'Read', post %> |	
+     <% if current_user?(post.user) %> 
+	<%= link_to "delete", destroy_post_path(post.id), :method => :delete,
+                                   :confirm => "You sure?",
+                                   :title => post.name %>
+
+        <% end %></li>
+   </ul>
+    </info2>
+ 
+    </td>
+  </tr>
+<% end %>
+</table>
+
+
+
+
+
+

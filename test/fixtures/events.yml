@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  location: MyString
+  description: MyText
+  date: 2012-06-03
+  eventpic_file_name: MyString
+  eventpic_file_size: 1
+  eventpic_updated_at: 2012-06-03 08:34:44
+  eventpic_content_type: MyString
+
+two:
+  name: MyString
+  location: MyString
+  description: MyText
+  date: 2012-06-03
+  eventpic_file_name: MyString
+  eventpic_file_size: 1
+  eventpic_updated_at: 2012-06-03 08:34:44
+  eventpic_content_type: MyString

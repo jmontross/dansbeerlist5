@@ -335,6 +335,7 @@ table.microposts tr {
 }
 
 
+
 table.microposts tr td.gravatar {
   border-top: 1px solid #ccc;
   vertical-align: top;
@@ -347,9 +348,8 @@ table.microposts tr td.micropost {
   vertical-align: top;
   padding-top: 10px;
   font-size: 14px;
-  
-  
 }
+
 
 table.microposts tr td.micropost span.timestamp {
   display: block;
@@ -559,62 +559,55 @@ eventindex {
   margin: 0;
 }
 
-.message {
-  margin: 8px 0;
-  padding: 30px 30px 40px 5px;
-  border: solid 1px #999;
-  width: 300px;
+.admin {
+background-color: #62b4fa;
+
+width: 200px;
+
   border-radius: 50px;
   background-image: -webkit-gradient(
       linear,
       left bottom,
       left top,
-      color-stop(0, #CCC),
-      color-stop(1, #F5F5F5)
+      color-stop(0, #555),
+      color-stop(1, #62b4fa)
   );
   background-image: -moz-linear-gradient(
       center bottom,
-      #CCC 0%,
-      #F5F5F5 100%
+      #555 0%,
+      #62b4fa 100%
   );
+
 }
 
+.admin2 {
+background-color: red;
+font-size: 10px;
+width: 70px;
+margin: auto;
+  border-radius: 0px;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, #555),
+      color-stop(1, red)
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      #555 0%,
+      red 100%
+  );
 
-
-.message .content a {
-  color: #000;
-  text-decoration: none;
-  font-size: 14px;
-  margin-left: 10px;
-  
 }
 
-.message .content img {
-	float: left;
-	padding: 0px 0px 0px 10px;
+stats {
+padding: 40px;
 }
 
-.message .created_at {
-  color: #555;
-  font-size: 12px;
-  float: right;
-}
+hr { height: 0; border-style: dashed; border-width: 5px 0 0 0; border-color:
+#333; }
 
-.message .actions {
-  font-size: 12px;
-  margin-top: 2px;
-   margin-left: 15px;
+namey {
+	font-size: 14px;
 }
-
-.message .actions a {
-  text-decoration: none;
-}
-
-.nested_messages {
-  margin-left: 50px;
-}
-.nested_messages .nested_messages .nested_messages {
-  margin-left: 0;
-}
-
-

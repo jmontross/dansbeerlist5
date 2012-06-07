@@ -30,8 +30,29 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]).destroy
     redirect_to users_path
   end
-end
 
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following
+    if signed_in?
+      @micropost = Micropost.new
+    end
+    render 'show_follow'
+    
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers
+    if signed_in?
+      @micropost = Micropost.new
+    end
+    render 'show_follow'
+  end
+  
 def admin_user
   redirect_to(root_path) unless current_user.admin?
+end
 end
