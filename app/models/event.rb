@@ -6,5 +6,5 @@ class Event < ActiveRecord::Base
 	:storage => :s3,
 	:s3_credentials => "#{Rails.root}/config/s3.yml",
 	:path => "dansbeerlist/:id/:basename.:extention"
-	default_scope :order => 'events.created_at DESC'
+	:order => "record_events.index DESC"
 end
