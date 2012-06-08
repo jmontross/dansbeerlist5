@@ -10,7 +10,7 @@
 <% if current_user.admin? %>
 		
 		<%= link_to 'Edit', edit_event_path(@event) %> | <%= link_to "delete", destroy_event_path(@event.id), :method => :delete, :confirm => "You sure?",
-		                                :title => "Delete #{@event.name}" %>
+		                                :title => "Delete #{@event.name}" %> | <%= link_to 'New Event', new_event_path %>
 			  
 <% end %>
 							
@@ -21,7 +21,8 @@
     	<li><strong><u>Place:</u></strong> <%= @event.location.html_safe %></li>
     	<li><strong><u>Description:</u></strong> </br><%= @event.description.html_safe %></li>
     	</ul>
-		<%= link_to "Back to events.", events_path %>						  
+		<%= link_to "Back to events.", events_path %>
+								  
 
       </info2>
 
