@@ -8,8 +8,7 @@
 
 <% if current_user.admin? %>
 </br>
-<%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to "delete", destroy_article_path(@article.id), :method => :delete, :confirm => "You sure?",
-			:title => "Delete #{@article.title}" %> | <%= link_to 'New Article', new_article_path %>
+<%= link_to 'Edit', edit_article_path(@article) %> | | <%= link_to 'New Article', new_article_path %>
 <% end %>
         <ul>
     	
