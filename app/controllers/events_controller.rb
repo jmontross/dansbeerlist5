@@ -21,7 +21,7 @@ class EventsController < ApplicationController
   
   def index
   	@title = "Tasting Events"
-  	@events = Event..order("id DESC").all
+  	@events = Event.order("id DESC").all
   	 if signed_in?
       @micropost = Micropost.new
     end
