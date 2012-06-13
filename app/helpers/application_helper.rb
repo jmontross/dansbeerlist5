@@ -32,6 +32,11 @@ module ApplicationHelper
     image_tag("links/homelinkselect.gif", :alt => "Sample App", :class => "round")
   end
   
+  
+  def signupbeer
+    image_tag("signupbeer.png", :alt => "signup")
+  end
+  
   def dartboard
     image_tag("dartboard.png", :alt => "Dartboard", :class => "rightoutside")
   end
