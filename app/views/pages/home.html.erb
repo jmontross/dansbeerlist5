@@ -10,7 +10,7 @@
   		<ul>
   		<li><h4><u><%=truncate(m.title, :length =>100)%></u></h4></li>
   		<li><%=truncate(m.content, :length =>200)%></li>
-  		<li><%= link_to "See this story", article_path%> | <%= link_to "See all stories", articles_path%></li>
+  		<li><%= link_to "See this story", article_path(m)%> | <%= link_to "See all stories", articles_path%></li>
   		</ul>
   	<%end%>
   </newshome>
@@ -22,7 +22,7 @@
   		<ul>
   		<li><h4><u><%=truncate(m.name, :length =>100)%></u></h4></li>
   		<li><%=truncate(m.description, :length =>200)%></li>
-  		<li><%= link_to "See this event", event_path%> | <%= link_to "See all events", events_path%></li>
+  		<li><%= link_to "See this event", event_path(m)%> | <%= link_to "See all events", events_path</li>
   		</ul>
   	<%end%>
   </eventshome> 
