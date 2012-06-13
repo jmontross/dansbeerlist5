@@ -22,7 +22,7 @@
   		<ul>
   		<li><h4><u><%=truncate(m.name, :length =>100)%></u></h4></li>
   		<li><%=truncate(m.description, :length =>200)%></li>
-  		<li><%= link_to "See this event", event_path(m)%> | <%= link_to "See all events", events_path</li>
+  		<li><%= link_to "See this event", event_path(m)%> | <%= link_to "See all events", events_path%></li>
   		</ul>
   	<%end%>
   </eventshome> 
