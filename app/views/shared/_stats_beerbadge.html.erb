@@ -2,7 +2,7 @@
   <li><stats><a href="<%= user_path(@user) %>"><%= pluralize(@user.microposts.count, "Beer Post") %></a></stats></li>
   <li><stats><a href="<%= user_path(@user) %>"><%= pluralize(@user.posts.count, "Das Forum Post") %></a></stats></li>
   <li><stats><a href="<%= user_path(@user) %>"><%= pluralize(@user.comments.count, "Das Forum Comments") %></a></stats></li>
-  <li><stats><a href="<%= user_path(@user) %>"><%= pluralize(@user.participations.count, "Event attended") %></a></stats></li>
+  <li><stats><a href="<%= user_path(@user) %>"><%= pluralize(@user.participations.count, "Event") %></a></stats></li>
   <li><stats><a href="<%= following_user_path(@user) %>"><%= pluralize(@user.following.count, "following") %></a></stats></li>
   <li><stats><a href="<%= followers_user_path(@user) %>"><%= pluralize(@user.followers.count, "follower") %></a></stats></li>
    <li><%= image_tag("add.png")%></li>
