@@ -1,6 +1,16 @@
 Dansbeerlist::Application.configure do
   
   config.action_mailer.default_url_options = { :host => 'dansbeerlist2.herokuapp.com' }
+     config.action_mailer.delivery_method = :smtp
+     config.action_mailer.smtp_settings = {
+       :enable_startttls_auto => true,
+       :address => 'smtp.gmail.com',
+       :port => '587',
+       :authentication => :plain,
+       :domain => 'gmail.com.com',
+       :user_name => 'danielpwarter@gmail.com',
+       :password => 'dabears6874'
+     }
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
