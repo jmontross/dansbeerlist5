@@ -30,6 +30,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]).destroy
     redirect_to users_path
   end
+  
+  def admin_user
+    redirect_to(root_path) unless current_user.admin?
+  end
 
   def following
     @title = "Following"
@@ -52,7 +56,5 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
   
-def admin_user
-  redirect_to(root_path) unless current_user.admin?
-end
+
 end

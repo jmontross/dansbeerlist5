@@ -55,4 +55,15 @@
 	(<%= link_to "Read about us", about_path %> first.)
 </p>
   <%= link_to "Sign up now!", new_user_registration_path, :class => "signup_button round" %>
+</br>
+<h3>Become one of us:</h3>
+  		<% @userpictures.each do |m|%>
+  		<% if m.gravatar_file_name %>
+	     <%= image_tag(m.gravatar, :width => '70') %>
+	     <% else %>
+	        	<%= default2 %>
+					<% end %>
+  		
+  	<%end%>
+
 <% end %>
