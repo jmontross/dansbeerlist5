@@ -20,7 +20,7 @@
   
     <li>(<%= pluralize(post.comments.size, 'comment') %>)</li>   
     <li><%= post.name %></li>
-    <li><%= post.content %></li>
+    <li><%= post.content.html_safe %></li>
 	<li><span class="timestamp">
       Posted <%= time_ago_in_words(post.created_at) %> ago.</li>
     <li><%= link_to 'Read', post %> |	

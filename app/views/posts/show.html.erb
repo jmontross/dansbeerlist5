@@ -15,7 +15,7 @@
 	 <info2>
 		<ul>
          <li><b> <%= @post.name %></b></li>
-         <li><%= @post.content %></li>
+         <li><%= @post.content.html_safe %></li>
 		 <li><%= link_to "Back to Das Forum", posts_path %></li>
        </ul>
      </info2>
@@ -45,7 +45,7 @@
 		<td class="micropost">
 		 <info2>
 			<ul>
-				<li><%= simple_format comment.content %></li>
+				<li><%= simple_format comment.content.html_safe %></li>
 				<li><em><b><%= comment.user.username %></b> on <%= comment.created_at.strftime('%b %d, %Y') %></em></li>  
                 
 		    </ul>
