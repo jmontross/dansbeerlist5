@@ -5,7 +5,7 @@ gem 'rails', '3.2.1'
 group :development do
 	gem 'sqlite3', '1.3.5'
   
-  end
+end
 
 
 # Bundle edge Rails instead:
@@ -20,6 +20,13 @@ gem 'simple_form'
 gem 'paperclip', '~> 3.0'
 gem 'nifty-generators'
 gem 'ancestry'
+
+group :test do
+  gem 'activesupport', '3.2.1'
+  gem 'activemodel', '3.2.1'
+  gem 'actionpack', '3.2.1'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -37,7 +44,7 @@ end
 
   
 
-gem 'jquery-rails', '2.0.0'
+gem 'jquery-rails', '2.0.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

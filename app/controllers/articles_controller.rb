@@ -11,8 +11,8 @@ class ArticlesController < ApplicationController
   
   def show
   	@article = Article.find(params[:id])
-	@title = @article.title
-	if signed_in?
+	  @title = @article.title
+    if signed_in?
       @micropost = Micropost.new
     end
   end
